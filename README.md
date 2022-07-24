@@ -6,3 +6,4 @@ A simple go mock server for practice
 - [ ] 支持多文件类型
 - [ ] 支持多文件
 - [ ] 支持多种请求方式
+- [ ] 支持编写自定义mock数据
