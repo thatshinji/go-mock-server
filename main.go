@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"go-mock-server/src"
 	"log"
 	"net/http"
@@ -10,11 +10,14 @@ import (
 var data map[string]interface{}
 
 func returnResponse(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("content-type", "text/json")
+	w.Header().Set("content-type", "application/json")
 	path := r.URL.Path
-	//w.Write(data[path])
 	if d := data[path]; d != nil {
-		fmt.Println(d, "data")
+		stringData, err := json.Marshal(data[path])
+		if err != nil {
+			log.Fatal(err)
+		}
+		w.Write(stringData)
 	}
 }
 

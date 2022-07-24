@@ -1,0 +1,9 @@
+{
+  "/v1/lottery": [{
+    "name": "shinji",
+    "age": 20
+  }, {
+    "name": "ayanami",
+    "age": 20
+  }]
+}
